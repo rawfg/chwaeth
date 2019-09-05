@@ -1,20 +1,12 @@
 language: node_js
-node:
-  - 7
+node_js:
+  - "stable"
 
 cache:
   yarn: true
   directories:
     - node_modules
 
-dist: trusty
-
-addons:
-  sonarcloud:
-    organization: "rawfg-github"
-    token:
-      secure: "aM4TVUvBNcK9j85VzMLArEUrn3qEfK2+TVPHrFlmMQ472plDjSaJMmvj3VCyR59wszhU4ZACzDPkGG5wDKd+mX/gmpVZ0iZ2IXNB4VOOIQV64/l6/sKFgn6dgtueyZaXHpDK+twkgPN0n+mT8m4p0E5s62VkfxxXdd/Og7IMT2WRKkbOSVOYgIYQ8bqqlO+DxkjZAYWKXGLYBzGV9uv4OQOZGNwpPQeOeY1vyd4KvZNY9Qh/zFwItayc/jkBdcm89TlzkkWJU9JRJxJbFUgWr+Alr8hYzDDNYoRmcy/vEwgYQ7pCTINoEoaN270p1nuR73xkVGiFDjXqWBnenK2r1x1Lc24FbjPHTdG2LWIdHv3YuKKa2owD0pzAcqkwaHq4X0PPrWPWtbRv1mTHlNDBvgjsY2iYLpid8Xdd3gVmUBdvjWqpW6j9h0CSsRlJUbEj3hw46ikmkqYpLmhykrVXqYXb3fP8sp8XZpnMZXYLfZxd/1kbsXqacpGMLnN6pdhan2YWwwn3QQBl9qlWLgPcCODjZSHQMByi+IE4S6/MhxuOaz5Px+8uoJ7Aq3XZcVijTm3eWRH77J9VVvU9eD+wuOBVhJqChZC4LrBFi/JZ/IxdIZg6r3hnFs/fARDk5i8OC/A7eb6aZvrYWhu92G09phpPEXkhH3of1ei6QRmM4UI="
-
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - sonar-scanner
+  - yarn test
+  - yarn build
