@@ -26,5 +26,4 @@ deploy:
   domain: chwaeth.surge.sh
   project: ./build/
 
-on:
-  master
+on: master
